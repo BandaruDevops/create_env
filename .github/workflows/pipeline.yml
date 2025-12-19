@@ -26,5 +26,5 @@ jobs:
 
     - name: Build & Push Image
       run: |
-        docker build -t $REGISTRY/$IMAGE_NAME:${{ github.sha }} .
-        docker push $REGISTRY/$IMAGE_NAME:${{ github.sha }}
+          docker build -t $REGISTRY/$IMAGE_NAME:${{ github.sha }} -f app/Dockerfile app
+          docker push $REGISTRY/$IMAGE_NAME:${{ github.sha }}
